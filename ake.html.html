@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Card</title>
+</head>
+<body>
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
+        <img id="mainImage" src="https://sdl-stickershop.line.naver.jp/products/0/0/1/1310738/android/stickers/12549971.png" style="height: 200px;" alt="Love">
+        <h1 id="question" style="font-size: 2rem; text-align: center;">Солнышко, ты будешь моей валентинкой?</h1>
+        <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+            <button id="yesButton" style="background-color: #4CAF50; color: white; padding: 0.5rem 1rem; font-size: 1rem; border: none; border-radius: 0.3rem;">Да</button>
+            <button id="noButton" style="background-color: #f44336; color: white; padding: 0.5rem 1rem; font-size: 1rem; border: none; border-radius: 0.3rem;">Нет</button>
+        </div>
+        <div id="response" style="margin-top: 1rem;"></div>
+    </div>
+
+    <script>
+        document.getElementById("yesButton").addEventListener("click", function() {
+            document.getElementById("question").innerText = "Люблю тебя! ❤️";
+            document.getElementById("response").innerText = "";
+            var mainImage = document.getElementById("mainImage");
+            mainImage.src = "https://gifdb.com/images/high/cute-love-bear-roses-ou7zho5oosxnpo6k.gif";
+            mainImage.alt = "Cute love bear with roses";
+            mainImage.style.height = "200px";
+        });
+
+        document.getElementById("noButton").addEventListener("click", function() {
+            var newButton = document.createElement("button");
+            newButton.textContent = "Да";
+            newButton.style.backgroundColor = "#4CAF50";
+            newButton.style.color = "white";
+            newButton.style.padding = "0.5rem 1rem";
+            newButton.style.fontSize = "1rem";
+            newButton.style.border = "none";
+            newButton.style.borderRadius = "0.3rem";
+            newButton.addEventListener("click", function() {
+                document.getElementById("question").innerText = "Люблю тебя! ❤️";
+                document.getElementById("response").innerText = "";
+                var mainImage = document.getElementById("mainImage");
+                mainImage.src = "https://gifdb.com/images/high/cute-love-bear-roses-ou7zho5oosxnpo6k.gif";
+                mainImage.alt = "Cute love bear with roses";
+                mainImage.style.height = "200px";
+            });
+            document.getElementById("response").appendChild(newButton);
+        });
+    </script>
+</body>
+</html>
+
+
